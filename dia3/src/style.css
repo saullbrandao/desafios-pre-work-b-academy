@@ -1,8 +1,49 @@
-#app {
+body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  display: block;
+}
+
+.name-input {
+  width: 30%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.color-select {
+  width: 70px;
+  height: 90px;
+}
+
+.container {
+  display: flex;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.color-div {
+  width: 100px;
+  height: 100px;
+}
+
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: blue;
+}
+.green {
+  background-color: green;
+}
+.yellow {
+  background-color: yellow;
+}
+.black {
+  background-color: black;
 }
