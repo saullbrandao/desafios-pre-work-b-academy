@@ -11,9 +11,14 @@ body {
 }
 
 .form {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+.car-form {
+  width: 40%;
 }
 
 .color-select {
@@ -46,4 +51,18 @@ body {
 }
 .black {
   background-color: black;
+}
+
+.car-table,
+th,
+tr,
+td {
+  border: 1px solid black;
+}
+
+.car-table {
+  width: 900px;
+  border-collapse: collapse;
+  margin-top: 10px;
+  text-align: center;
 }
