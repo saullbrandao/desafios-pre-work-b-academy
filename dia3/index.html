@@ -13,36 +13,33 @@
 
     <form data-js="car" class="form car-form">
       <label for="image">Image: </label>
-      <input type="url" data-js="image" id="image" name="image" />
+      <input type="text" id="image" name="image" />
 
       <label for="model">Brand / Model: </label>
-      <input type="text" data-js="model" id="model" name="model" />
+      <input type="text" id="model" name="model" />
 
       <label for="year">Year: </label>
-      <input type="number" data-js="year" id="year" name="year" />
+      <input type="number" id="year" name="year" />
 
       <label for="plate">Plate: </label>
-      <input type="text" data-js="plate" id="plate" name="plate" />
+      <input type="text" id="plate" name="plate" />
 
       <label for="color">Color: </label>
-      <input
-        type="color"
-        data-js="color"
-        id="color"
-        name="color"
-        value="#000000"
-      />
+      <input type="color" id="color" name="color" value="#000000" />
 
       <button>Submit</button>
     </form>
-    <table data-js="table" class="car-table">
-      <tr>
-        <th>Image</th>
-        <th>Brand / Model</th>
-        <th>Year</th>
-        <th>Plate</th>
-        <th>Color</th>
-      </tr>
+    <table class="car-table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Brand / Model</th>
+          <th>Year</th>
+          <th>Plate</th>
+          <th>Color</th>
+        </tr>
+      </thead>
+      <tbody data-js="table"></tbody>
     </table>
     <script type="module" src="/src/main.js"></script>
   </body>
