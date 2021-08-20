@@ -8,6 +8,7 @@ body {
 
 .form {
   margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -34,4 +35,8 @@ td {
   border-collapse: collapse;
   margin-top: 10px;
   text-align: center;
+}
+
+.error {
+  color: red;
 }

@@ -7,7 +7,33 @@ async function getCars() {
   return data;
 }
 
-const carsArray = await getCars();
+async function registerCar(car) {
+  const response = await fetch("http://localhost:3333/cars", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(car),
+  });
+
+  const data = await response.json();
+
+  return data;
+}
+
+function createImage(value) {
+  const img = document.createElement("img");
+  img.src = value;
+  img.width = 100;
+  return img;
+}
+
+function createColorDiv(value) {
+  const div = document.createElement("div");
+  div.className = "color-div";
+  div.style.background = value;
+  return div;
+}
 
 function renderTableRow(car) {
   const row = document.createElement("tr");
@@ -37,7 +63,15 @@ function renderEmptyRow() {
   table.appendChild(row);
 }
 
-function renderTable() {
+function renderErrorMessage(message) {
+  const error = document.createElement("span");
+  error.textContent = message;
+  error.className = "error";
+  form.insertAdjacentElement("afterend", error);
+}
+
+async function renderTable() {
+  const carsArray = await getCars();
   table.innerHTML = "";
 
   carsArray.length > 0
@@ -47,15 +81,24 @@ function renderTable() {
 
 renderTable();
 
-function createImage(value) {
-  const img = document.createElement("img");
-  img.src = value;
-  img.width = 100;
-  return img;
-}
-function createColorDiv(value) {
-  const div = document.createElement("div");
-  div.className = "color-div";
-  div.style.background = value;
-  return div;
-}
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const error = document.querySelector(".error");
+  error?.remove();
+
+  const formData = new FormData(event.currentTarget);
+  const car = {};
+
+  for (let entry of formData.entries()) {
+    const [key, value] = entry;
+    car[key] = value;
+  }
+
+  const response = await registerCar(car);
+
+  if (response.error) {
+    renderErrorMessage(response.message);
+  }
+
+  renderTable();
+});
