@@ -80,7 +80,7 @@ function renderEmptyRow() {
   const row = document.createElement("tr");
   const td = document.createElement("td");
   td.textContent = "No cars found";
-  td.colSpan = 5;
+  td.colSpan = 6;
   row.appendChild(td);
   table.appendChild(row);
 }
