@@ -1,4 +1,4 @@
-const input = document.querySelector('[data-js="name"]');
+const nameInput = document.querySelector('[data-js="name"]');
 const form = document.querySelector('[data-js="form"]');
 
 const colorSelect = document.createElement("select");
@@ -29,27 +29,24 @@ colorSelect.addEventListener("change", (event) => {
   });
 });
 
-function capitalize(word) {
-  const newWord = word.trim().split("");
-  newWord[0] = newWord[0]?.toUpperCase();
-  return newWord.join("");
-}
+const capitalize = (word) => word.charAt(0).toUpperCase() + word.slice(1);
 
-input.addEventListener("input", (event) => {
+nameInput.addEventListener("input", (event) => {
   const name = event.currentTarget.value.split(" ");
 
   const exceptions = {
     de: true,
     da: true,
+    das: true,
     do: true,
     dos: true,
   };
 
-  const newName = name.map((element) =>
-    exceptions[element.toLowerCase()]
-      ? element.toLowerCase()
-      : capitalize(element.toLowerCase())
-  );
-
-  input.value = newName.join(" ");
+  event.currentTarget.value = name
+    .map((word) =>
+      exceptions[word.toLowerCase()]
+        ? word.toLowerCase()
+        : capitalize(word.toLowerCase())
+    )
+    .join(" ");
 });
