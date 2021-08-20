@@ -122,6 +122,7 @@ form.addEventListener("submit", async (event) => {
     renderErrorMessage(response.message);
   }
 
+  form.reset();
   renderTable();
 });
 
