@@ -21,6 +21,16 @@ async function registerCar(car) {
   return data;
 }
 
+async function deleteCar(plate) {
+  await fetch("http://localhost:3333/cars", {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(plate),
+  });
+}
+
 function createImage(value) {
   const img = document.createElement("img");
   img.src = value;
@@ -33,6 +43,13 @@ function createColorDiv(value) {
   div.className = "color-div";
   div.style.background = value;
   return div;
+}
+
+function createButton(plate) {
+  const button = document.createElement("button");
+  button.dataset.js = plate;
+  button.textContent = "DELETE";
+  return button;
 }
 
 function renderTableRow(car) {
@@ -51,6 +68,11 @@ function renderTableRow(car) {
     }
     row.appendChild(td);
   }
+
+  const td = document.createElement("td");
+  td.appendChild(createButton(car.plate));
+  row.appendChild(td);
+
   table.appendChild(row);
 }
 
@@ -99,6 +121,15 @@ form.addEventListener("submit", async (event) => {
   if (response.error) {
     renderErrorMessage(response.message);
   }
+
+  renderTable();
+});
+
+table.addEventListener("click", async (event) => {
+  if (event.target.nodeName !== "BUTTON") return;
+  const plate = { plate: event.target.dataset.js };
+
+  await deleteCar(plate);
 
   renderTable();
 });
