@@ -1,0 +1,68 @@
+body {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  display: block;
+}
+
+.name-input {
+  width: 30%;
+}
+
+.form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.car-form {
+  width: 40%;
+}
+
+.color-select {
+  width: 70px;
+  height: 90px;
+}
+
+.container {
+  display: flex;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.color-div {
+  width: 100px;
+  height: 100px;
+}
+
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: blue;
+}
+.green {
+  background-color: green;
+}
+.yellow {
+  background-color: yellow;
+}
+.black {
+  background-color: black;
+}
+
+.car-table,
+th,
+tr,
+td {
+  border: 1px solid black;
+}
+
+.car-table {
+  width: 900px;
+  border-collapse: collapse;
+  margin-top: 10px;
+  text-align: center;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dia 3</title>
+  </head>
+  <body>
+    <form data-js="form" class="form">
+      <input class="name-input" type="text" data-js="name" />
+    </form>
+
+    <form data-js="car" class="form car-form">
+      <label for="image">Image: </label>
+      <input type="text" id="image" name="image" />
+
+      <label for="model">Brand / Model: </label>
+      <input type="text" id="model" name="model" />
+
+      <label for="year">Year: </label>
+      <input type="number" id="year" name="year" />
+
+      <label for="plate">Plate: </label>
+      <input type="text" id="plate" name="plate" />
+
+      <label for="color">Color: </label>
+      <input type="color" id="color" name="color" value="#000000" />
+
+      <button>Submit</button>
+    </form>
+    <table class="car-table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Brand / Model</th>
+          <th>Year</th>
+          <th>Plate</th>
+          <th>Color</th>
+        </tr>
+      </thead>
+      <tbody data-js="table"></tbody>
+    </table>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
