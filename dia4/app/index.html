@@ -7,6 +7,37 @@
     <title>Dia 4</title>
   </head>
   <body>
-    <script type="module" src="/main.js"></script>
+    <form data-js="car" class="form car-form">
+      <label for="image">Image: </label>
+      <input type="text" id="image" name="image" required />
+
+      <label for="model">Brand / Model: </label>
+      <input type="text" id="brandModel" name="brandModel" required />
+
+      <label for="year">Year: </label>
+      <input type="number" id="year" name="year" required />
+
+      <label for="plate">Plate: </label>
+      <input type="text" id="plate" name="plate" required />
+
+      <label for="color">Color: </label>
+      <input type="color" id="color" name="color" value="#000000" required />
+
+      <button>Submit</button>
+    </form>
+    <table class="car-table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Brand / Model</th>
+          <th>Year</th>
+          <th>Plate</th>
+          <th>Color</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody data-js="table"></tbody>
+    </table>
+    <script type="module" src="src/main.js"></script>
   </body>
 </html>
