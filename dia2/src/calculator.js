@@ -1,10 +1,11 @@
-function calculadora (callback) {
+function calculadora(callback) {
+  return (a, b) => callback(a, b);
 }
 
-const sum = calculadora((a, b) => a + b)
-const sub = calculadora((a, b) => a - b)
-const mult = calculadora((a, b) => a * b)
-const div = calculadora((a, b) => a / b)
+const sum = calculadora((a, b) => a + b);
+const sub = calculadora((a, b) => a - b);
+const mult = calculadora((a, b) => a * b);
+const div = calculadora((a, b) => a / b);
 
 console.log('Somar 1 e 2 = 3:', sum(1, 2) === 3)
 console.log('Subtrair 4 de 20 = 16:', sub(20, 4) === 16)
